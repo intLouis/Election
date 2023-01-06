@@ -7,6 +7,7 @@ import com.election.bo.CandidateBO;
 import com.election.bo.ElectionBO;
 import com.election.bo.ElectionRecordBO;
 import com.election.bo.ElectionResultBO;
+import com.election.context.UserContext;
 import com.election.dto.administrator.*;
 import com.election.enums.CacheKey;
 import com.election.enums.ElectionState;
@@ -68,7 +69,7 @@ public class AdministratorServiceImpl implements AdministratorService {
     private final FlushVoteInfoToDBTask flushVoteInfoToDBTask;
     private final TransactionTemplate transactionTemplate;
     private final Redisson redisson;
-
+    private final UserContext userContext;
 
     @Override
     public void addCandidate(final AddCandidateDTO.@NonNull Req req) {
